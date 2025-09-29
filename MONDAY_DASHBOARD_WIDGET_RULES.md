@@ -24,16 +24,16 @@ Estabelecer um padrão consistente e robusto para o desenvolvimento de widgets d
 - **Acessibilidade**: WCAG 2.1 AA compliance
 
 ### 📚 Documentação Detalhada
-Para informações específicas e detalhadas sobre cada área, consulte os documentos especializados na pasta `docs/`:
+Para informações específicas e detalhadas sobre cada área, consulte os documentos especializados na pasta `rules/`:
 
-- **[Architecture Patterns](./docs/architecture-patterns.md)** - Padrões arquiteturais específicos
-- **[Development Standards](./docs/development-standards.md)** - Padrões de desenvolvimento e código
-- **[Design System Integration](./docs/design-system.md)** - Integração com Monday Vibe
-- **[Performance Optimization](./docs/performance-optimization.md)** - Otimização específica para widgets
-- **[Security Guidelines](./docs/security-guidelines.md)** - Diretrizes de segurança
-- **[Accessibility Standards](./docs/accessibility-standards.md)** - Padrões de acessibilidade WCAG 2.1 AA
-- **[Testing Strategies](./docs/testing-strategies.md)** - Estratégias de teste para widgets
-- **[Deployment Guidelines](./docs/deployment-guidelines.md)** - Deploy e monitoramento
+- **[Architecture Patterns](./rules/architecture-patterns.md)** - Padrões arquiteturais específicos
+- **[Development Standards](./rules/development-standards.md)** - Padrões de desenvolvimento e código
+- **[Design System Integration](./rules/design-system.md)** - Integração com Monday Vibe
+- **[Performance Optimization](./rules/performance-optimization.md)** - Otimização específica para widgets
+- **[Security Guidelines](./rules/security-guidelines.md)** - Diretrizes de segurança
+- **[Accessibility Standards](./rules/accessibility-standards.md)** - Padrões de acessibilidade WCAG 2.1 AA
+- **[Testing Strategies](./rules/testing-strategies.md)** - Estratégias de teste para widgets
+- **[Deployment Guidelines](./rules/deployment-guidelines.md)** - Deploy e monitoramento
 
 ---
 
