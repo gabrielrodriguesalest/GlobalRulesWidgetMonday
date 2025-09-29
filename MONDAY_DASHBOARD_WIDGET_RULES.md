@@ -23,42 +23,17 @@ Estabelecer um padrão consistente e robusto para o desenvolvimento de widgets d
 - **Segurança**: Validação e sanitização robusta
 - **Acessibilidade**: WCAG 2.1 AA compliance
 
----
+### 📚 Documentação Detalhada
+Para informações específicas e detalhadas sobre cada área, consulte os documentos especializados na pasta `docs/`:
 
-## 📚 Estrutura da Documentação
-
-### 📋 Documento Principal
-- **[MONDAY DASHBOARD WIDGET RULES](./MONDAY_DASHBOARD_WIDGET_RULES.md)** - Este documento com todas as regras globais
-
-### 🏗️ Fundamentos e Arquitetura
-- **[Architecture Patterns](./architecture-patterns.md)** - Padrões arquiteturais específicos para widgets
-- **[Development Standards](./development-standards.md)** - Padrões de desenvolvimento e código
-- **[Component Structure](./component-structure.md)** - Estrutura e organização de componentes
-
-### 🎨 Design e UX
-- **[Design System Integration](./design-system.md)** - Integração com Monday Vibe Design System
-- **[Responsive Design](./responsive-design.md)** - Responsividade e adaptação de tamanhos
-- **[Accessibility Standards](./accessibility-standards.md)** - Padrões de acessibilidade WCAG 2.1 AA
-
-### ⚡ Performance e Otimização
-- **[Performance Optimization](./performance-optimization.md)** - Otimização de performance para widgets
-- **[Data Management](./data-management.md)** - Gerenciamento eficiente de dados
-- **[Caching Strategies](./caching-strategies.md)** - Estratégias de cache e otimização
-
-### 🔒 Segurança e Compliance
-- **[Security Guidelines](./security-guidelines.md)** - Diretrizes de segurança específicas
-- **[Data Validation](./data-validation.md)** - Validação e sanitização de dados
-- **[Compliance Standards](./compliance-standards.md)** - Padrões de compliance (LGPD/GDPR)
-
-### 🧪 Qualidade e Testes
-- **[Testing Strategies](./testing-strategies.md)** - Estratégias de teste para widgets
-- **[Quality Assurance](./quality-assurance.md)** - Garantia de qualidade
-- **[Error Handling](./error-handling.md)** - Tratamento de erros robusto
-
-### 🚀 Deploy e Produção
-- **[Deployment Guidelines](./deployment-guidelines.md)** - Diretrizes de deploy
-- **[Monitoring & Observability](./monitoring-observability.md)** - Monitoramento e observabilidade
-- **[Maintenance Procedures](./maintenance-procedures.md)** - Procedimentos de manutenção
+- **[Architecture Patterns](./docs/architecture-patterns.md)** - Padrões arquiteturais específicos
+- **[Development Standards](./docs/development-standards.md)** - Padrões de desenvolvimento e código
+- **[Design System Integration](./docs/design-system.md)** - Integração com Monday Vibe
+- **[Performance Optimization](./docs/performance-optimization.md)** - Otimização específica para widgets
+- **[Security Guidelines](./docs/security-guidelines.md)** - Diretrizes de segurança
+- **[Accessibility Standards](./docs/accessibility-standards.md)** - Padrões de acessibilidade WCAG 2.1 AA
+- **[Testing Strategies](./docs/testing-strategies.md)** - Estratégias de teste para widgets
+- **[Deployment Guidelines](./docs/deployment-guidelines.md)** - Deploy e monitoramento
 
 ---
 

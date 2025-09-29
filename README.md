@@ -26,35 +26,15 @@ Estabelecer um padrão consistente e robusto para o desenvolvimento de widgets d
 ### 📋 Documento Principal
 - **[MONDAY_DASHBOARD_WIDGET_RULES.md](./MONDAY_DASHBOARD_WIDGET_RULES.md)** - Documento principal com todas as regras globais
 
-### 🏗️ Arquitetura e Desenvolvimento
-- **[architecture-patterns.md](./architecture-patterns.md)** - Padrões arquiteturais específicos para widgets
-- **[development-standards.md](./development-standards.md)** - Padrões de desenvolvimento e código
-- **[component-structure.md](./component-structure.md)** - Estrutura e organização de componentes
-
-### 🎨 Design e UX
-- **[design-system.md](./design-system.md)** - Integração com Monday Vibe Design System
-- **[responsive-design.md](./responsive-design.md)** - Responsividade e adaptação de tamanhos
-- **[accessibility-standards.md](./accessibility-standards.md)** - Padrões de acessibilidade WCAG 2.1 AA
-
-### ⚡ Performance e Otimização
-- **[performance-optimization.md](./performance-optimization.md)** - Otimização de performance para widgets
-- **[data-management.md](./data-management.md)** - Gerenciamento eficiente de dados
-- **[caching-strategies.md](./caching-strategies.md)** - Estratégias de cache e otimização
-
-### 🔒 Segurança e Compliance
-- **[security-guidelines.md](./security-guidelines.md)** - Diretrizes de segurança específicas
-- **[data-validation.md](./data-validation.md)** - Validação e sanitização de dados
-- **[compliance-standards.md](./compliance-standards.md)** - Padrões de compliance (LGPD/GDPR)
-
-### 🧪 Qualidade e Testes
-- **[testing-strategies.md](./testing-strategies.md)** - Estratégias de teste para widgets
-- **[quality-assurance.md](./quality-assurance.md)** - Garantia de qualidade
-- **[error-handling.md](./error-handling.md)** - Tratamento de erros robusto
-
-### 🚀 Deploy e Produção
-- **[deployment-guidelines.md](./deployment-guidelines.md)** - Diretrizes de deploy
-- **[monitoring-observability.md](./monitoring-observability.md)** - Monitoramento e observabilidade
-- **[maintenance-procedures.md](./maintenance-procedures.md)** - Procedimentos de manutenção
+### 📁 Documentação Especializada (pasta `docs/`)
+- **[architecture-patterns.md](./docs/architecture-patterns.md)** - Padrões arquiteturais específicos
+- **[development-standards.md](./docs/development-standards.md)** - Padrões de desenvolvimento
+- **[design-system.md](./docs/design-system.md)** - Integração com Monday Vibe Design System
+- **[performance-optimization.md](./docs/performance-optimization.md)** - Otimização específica para widgets
+- **[security-guidelines.md](./docs/security-guidelines.md)** - Diretrizes de segurança robustas
+- **[accessibility-standards.md](./docs/accessibility-standards.md)** - Padrões WCAG 2.1 AA compliance
+- **[testing-strategies.md](./docs/testing-strategies.md)** - Estratégias de teste para widgets
+- **[deployment-guidelines.md](./docs/deployment-guidelines.md)** - Diretrizes de deploy e monitoramento
 
 ## 🚀 Instalação e Setup
 
