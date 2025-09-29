@@ -76,29 +76,15 @@ ls -la
 cd ..
 ```
 
-##### 3. Instale Dependências (Opcional)
+##### 3. Explore a Documentação
 ```bash
-# Para usar scripts de validação
-npm install
-```
+# Leia o documento principal
+cat MONDAY_DASHBOARD_WIDGET_RULES.md
 
-##### 4. Valide a Documentação (Opcional)
-```bash
-# Validar toda a documentação
-npm run validate
-
-# Validar apenas Markdown
-npm run lint:md
-
-# Validar apenas links
-npm run lint:links
-```
-
-##### 5. Sirva Localmente (Opcional)
-```bash
-# Servir documentação em servidor local
-npm run serve
-# Acesse http://localhost:8080
+# Explore as Global Rules específicas
+ls rules/
+cat rules/architecture-patterns.md
+cat rules/development-standards.md
 ```
 
 ### 🎯 Opção 3: Use como Referência em Seu Projeto
@@ -109,8 +95,7 @@ npm run serve
 git clone https://github.com/gabrielrodriguesalest/GlobalRulesWidgetMonday.git
 
 # 2. Use como base para seu projeto
-cp -r GlobalRulesWidgetMonday/examples/project-structure.md meu-projeto/
-cp GlobalRulesWidgetMonday/examples/widget-config-example.json meu-projeto/package.json
+cp -r GlobalRulesWidgetMonday/rules/ meu-projeto/docs/
 
 # 3. Adapte conforme suas necessidades
 ```
@@ -130,12 +115,12 @@ git clone https://github.com/gabrielrodriguesalest/GlobalRulesWidgetMonday.git r
 1. **Leia primeiro**: [MONDAY_DASHBOARD_WIDGET_RULES.md](./MONDAY_DASHBOARD_WIDGET_RULES.md)
 2. **Entenda a arquitetura**: [rules/architecture-patterns.md](./rules/architecture-patterns.md)
 3. **Configure seu ambiente**: [rules/development-standards.md](./rules/development-standards.md)
-4. **Siga os exemplos**: [examples/project-structure.md](./examples/project-structure.md)
+4. **Implemente com segurança**: [rules/security-guidelines.md](./rules/security-guidelines.md)
 
 ### 👨‍💻 Para Desenvolvedores Experientes
 1. **Consulte as regras específicas** na pasta `rules/`
 2. **Implemente os padrões** de segurança e performance
-3. **Use os templates** da pasta `examples/`
+3. **Siga as diretrizes** de acessibilidade e testes
 4. **Contribua** com melhorias via Pull Requests
 
 ### 🏢 Para Equipes e Tech Leads
@@ -163,22 +148,22 @@ npm install -D playwright axe-core
 
 ### 2. Estrutura do Projeto
 ```bash
-# Criar estrutura recomendada
+# Criar estrutura recomendada baseada nas Global Rules
 mkdir -p src/{components,hooks,services,utils,types}
 mkdir -p src/components/{charts,metrics,ui,layout}
 mkdir -p tests/{components,hooks,services,e2e}
 
-# Copiar configurações exemplo
-curl -o package.json https://raw.githubusercontent.com/gabrielrodriguesalest/GlobalRulesWidgetMonday/main/examples/widget-config-example.json
+# Copiar Global Rules como referência
+cp -r GlobalRulesWidgetMonday/rules/ docs/global-rules/
 ```
 
-### 3. Configuração das Global Rules
+### 3. Implementação das Global Rules
 ```bash
-# Adicionar como submodule (recomendado)
-git submodule add https://github.com/gabrielrodriguesalest/GlobalRulesWidgetMonday.git global-rules
-
-# Ou clonar como referência
-git clone https://github.com/gabrielrodriguesalest/GlobalRulesWidgetMonday.git docs/global-rules
+# Consulte cada arquivo específico conforme necessário:
+# - rules/architecture-patterns.md (para estrutura)
+# - rules/development-standards.md (para padrões de código)
+# - rules/security-guidelines.md (para segurança)
+# - rules/accessibility-standards.md (para acessibilidade)
 ```
 
 ## 📊 Checklist de Compliance
@@ -225,37 +210,26 @@ git clone https://github.com/gabrielrodriguesalest/GlobalRulesWidgetMonday.git d
 - [ ] Estratégia de rollback
 - [ ] Performance monitoring
 
-## 🛠️ Comandos Úteis
+## 🛠️ Como Usar as Global Rules
 
-### Desenvolvimento
+### Consulta Rápida
 ```bash
-# Validar código
-npm run lint
-npm run type-check
+# Ver todas as Global Rules disponíveis
+ls rules/
 
-# Executar testes
-npm run test
-npm run test:coverage
-npm run test:e2e
-
-# Build e análise
-npm run build
-npm run build:analyze
+# Ler uma regra específica
+cat rules/architecture-patterns.md
+cat rules/development-standards.md
+cat rules/security-guidelines.md
 ```
 
-### Validação das Global Rules
+### Implementação no Projeto
 ```bash
-# Validar documentação
-npm run validate
+# Copiar regras para seu projeto
+cp -r rules/ meu-projeto/docs/
 
-# Servir localmente
-npm run serve
-
-# Verificar acessibilidade
-npm run check:accessibility
-
-# Verificar performance
-npm run check:performance
+# Usar como referência durante desenvolvimento
+# Consulte os arquivos conforme necessário
 ```
 
 ## 📚 Recursos Adicionais
@@ -280,18 +254,16 @@ npm run check:performance
 ## 🤝 Comunidade e Suporte
 
 ### 💬 Canais de Comunicação
-- **🐛 Issues**: [Reportar Bugs](https://github.com/gabrielrodriguesalest/GlobalRulesWidgetMonday/issues/new?template=bug_report.md)
-- **✨ Feature Requests**: [Sugerir Melhorias](https://github.com/gabrielrodriguesalest/GlobalRulesWidgetMonday/issues/new?template=feature_request.md)
+- **🐛 Issues**: [Reportar Bugs](https://github.com/gabrielrodriguesalest/GlobalRulesWidgetMonday/issues)
+- **✨ Feature Requests**: [Sugerir Melhorias](https://github.com/gabrielrodriguesalest/GlobalRulesWidgetMonday/issues)
 - **💡 Discussions**: [Discussões Gerais](https://github.com/gabrielrodriguesalest/GlobalRulesWidgetMonday/discussions)
-- **📖 Wiki**: [Documentação Adicional](https://github.com/gabrielrodriguesalest/GlobalRulesWidgetMonday/wiki)
 
 ### 🏆 Como Contribuir
 1. **Fork** o repositório
-2. **Leia** o [CONTRIBUTING.md](./CONTRIBUTING.md)
-3. **Crie** uma branch para sua feature
-4. **Implemente** seguindo as Global Rules
-5. **Teste** suas alterações
-6. **Submeta** um Pull Request
+2. **Crie** uma branch para sua feature
+3. **Implemente** seguindo as Global Rules
+4. **Teste** suas alterações
+5. **Submeta** um Pull Request
 
 ### 🎯 Roadmap
 - **v1.1.0**: Integração com Monday AI
