@@ -1,0 +1,171 @@
+name: Validate Documentation
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate-markdown:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Lint Markdown files
+      run: npm run lint:md
+      
+    - name: Check Markdown links
+      run: npm run lint:links
+      
+    - name: Validate documentation structure
+      run: |
+        # Check if all required files exist
+        test -f README.md
+        test -f MONDAY_DASHBOARD_WIDGET_RULES.md
+        test -f architecture-patterns.md
+        test -f development-standards.md
+        test -f design-system.md
+        test -f performance-optimization.md
+        test -f security-guidelines.md
+        test -f accessibility-standards.md
+        test -f testing-strategies.md
+        test -f deployment-guidelines.md
+        test -f CHANGELOG.md
+        test -f CONTRIBUTING.md
+        test -f LICENSE
+        echo "✅ All required files exist"
+        
+    - name: Check file sizes
+      run: |
+        # Ensure documentation files are not empty
+        for file in *.md; do
+          if [ ! -s "$file" ]; then
+            echo "❌ $file is empty"
+            exit 1
+          fi
+        done
+        echo "✅ All documentation files have content"
+        
+    - name: Validate links format
+      run: |
+        # Check for broken internal links
+        grep -r "\]\(\./" *.md | while read line; do
+          file=$(echo "$line" | cut -d: -f1)
+          link=$(echo "$line" | sed 's/.*](\.\///g' | sed 's/).*//g')
+          if [ ! -f "$link" ]; then
+            echo "❌ Broken link in $file: $link"
+            exit 1
+          fi
+        done
+        echo "✅ All internal links are valid"
+
+  spell-check:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Install aspell
+      run: sudo apt-get install aspell aspell-pt-br
+      
+    - name: Check spelling (Portuguese)
+      run: |
+        # Create custom dictionary for technical terms
+        cat > .aspell.pt.pws << EOF
+        personal_ws-1.1 pt 100
+        Monday
+        monday
+        Widget
+        Widgets
+        Dashboard
+        TypeScript
+        JavaScript
+        React
+        Vibe
+        GraphQL
+        API
+        SDK
+        WCAG
+        ARIA
+        CSS
+        HTML
+        JSON
+        npm
+        GitHub
+        README
+        CHANGELOG
+        EOF
+        
+        # Check spelling in markdown files
+        for file in *.md; do
+          echo "Checking spelling in $file..."
+          aspell --lang=pt_BR --personal=.aspell.pt.pws --mode=markdown check "$file" < /dev/null
+        done
+        echo "✅ Spelling check completed"
+
+  accessibility-check:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Check accessibility guidelines
+      run: |
+        # Verify accessibility content exists
+        if ! grep -q "WCAG 2.1 AA" accessibility-standards.md; then
+          echo "❌ WCAG 2.1 AA not mentioned in accessibility standards"
+          exit 1
+        fi
+        
+        if ! grep -q "screen reader" accessibility-standards.md; then
+          echo "❌ Screen reader support not mentioned"
+          exit 1
+        fi
+        
+        if ! grep -q "keyboard navigation" accessibility-standards.md; then
+          echo "❌ Keyboard navigation not mentioned"
+          exit 1
+        fi
+        
+        echo "✅ Accessibility guidelines are comprehensive"
+
+  security-check:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Check security guidelines
+      run: |
+        # Verify security content exists
+        if ! grep -q "validation" security-guidelines.md; then
+          echo "❌ Input validation not mentioned in security guidelines"
+          exit 1
+        fi
+        
+        if ! grep -q "sanitization" security-guidelines.md; then
+          echo "❌ Data sanitization not mentioned"
+          exit 1
+        fi
+        
+        if ! grep -q "rate limiting" security-guidelines.md; then
+          echo "❌ Rate limiting not mentioned"
+          exit 1
+        fi
+        
+        echo "✅ Security guidelines are comprehensive"
